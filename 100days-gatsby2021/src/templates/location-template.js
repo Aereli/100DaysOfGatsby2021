@@ -1,29 +1,25 @@
 import React from 'react'
-// import { graphql } from 'gatsby'
+import { graphql } from 'gatsby'
+import Layout from '../components/layout'
 
-const SingleLocation = () => {
+const SingleLocation = ({ data }) => {
+  console.log(data.location)
   return (
-    <>
-      <h1>this is location</h1>
-    </>
+    <Layout>
+      <h1>{data.location.city}</h1>
+      <p>{data.location.description}</p>
+    </Layout>
   )
 }
 
 export default SingleLocation
 
-// export const query = graphql`
-//   query($slug: String!) {
-//     person: sanityPerson(slug: { current: { eq: $slug } }) {
-//       name
-//       id
-//       description
-//       image {
-//         asset {
-//           fluid(maxWidth: 1000, maxHeight: 750) {
-//             ...GatsbySanityImageFluid
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query($name: String!) {
+    location: sanityLocations(city: { eq: $name }) {
+      city
+      id
+      description
+    }
+  }
+`
