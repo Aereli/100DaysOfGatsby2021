@@ -4,7 +4,8 @@ import Layout from '../components/layout'
 const IndexPage = () => {
   return (
     <Layout>
-      <h1>this is home</h1>
+      <h1>Welcome to AudioCORE.</h1>
+      <p>Day 1 of #100DaysOfGatsby</p>
     </Layout>
   )
 }
