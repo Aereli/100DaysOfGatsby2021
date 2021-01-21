@@ -14,7 +14,6 @@ const Locations = () => {
       }
     }
   `)
-  console.log(data.locations.nodes)
   const cities = data.locations.nodes
   return (
     <Layout>
