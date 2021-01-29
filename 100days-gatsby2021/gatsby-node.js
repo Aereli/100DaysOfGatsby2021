@@ -14,9 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  console.log(data.allSanityLocations.nodes)
   data.allSanityLocations.nodes.forEach((location) => {
-    console.log(location)
     createPage({
       path: `/location/${location.city}`,
       component: path.resolve('./src/templates/location-template.js'),

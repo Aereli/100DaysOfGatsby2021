@@ -5,6 +5,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: '100DaysGatsby2021',
+    description: 'This is my entry for the Gatbys 100 days Challenge 2021',
   },
   plugins: [
     {

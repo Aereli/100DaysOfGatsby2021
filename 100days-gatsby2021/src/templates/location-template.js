@@ -1,13 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
+import Img from 'gatsby-image'
 
-const SingleLocation = ({ data }) => {
-  console.log(data.location)
+const SingleLocation = ({ data: { location } }) => {
   return (
     <Layout>
-      <h1>{data.location.city}</h1>
-      <p>{data.location.description}</p>
+      <h1>{location.city}</h1>
+      <p>{location.description}</p>
+      <Img fluid={location.image.asset.fluid} alt={location.city} />
     </Layout>
   )
 }
@@ -20,6 +21,13 @@ export const query = graphql`
       city
       id
       description
+      image {
+        asset {
+          fluid(maxWidth: 1000, maxHeight: 750) {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
     }
   }
 `
