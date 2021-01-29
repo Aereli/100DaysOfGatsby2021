@@ -1,16 +1,11 @@
 export default {
-  name: 'locations',
-  title: 'locations',
+  name: 'homePage',
+  title: 'Home Page',
   type: 'document',
   fields: [
     {
-      name: 'city',
-      title: 'City Name',
-      type: 'string',
-    },
-    {
-      name: 'description',
-      title: 'City Description',
+      name: 'home',
+      title: 'Home Page',
       type: 'string',
     },
     {
