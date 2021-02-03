@@ -8,7 +8,6 @@ import SEO from '../components/SEO'
 const IndexPage = ({ data }) => {
   const sanity = data.sanityHomePage
 
-  console.log(data.sanityHomePage)
   return (
     <Layout>
       <SEO title="AudioC0re" />
