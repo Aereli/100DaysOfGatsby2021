@@ -1,8 +1,12 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/SEO'
+import { FormiumForm } from '@formium/react'
+import { formium } from '../lib/formium'
+import { graphql } from 'gatsby'
 
-export default function Contact() {
+export default function Contact({ data }) {
+  console.log(data)
   return (
     <Layout>
       <SEO title="Contact" />
@@ -14,6 +18,34 @@ export default function Contact() {
       >
         Check out the github ↩
       </a>
+      {
+        <FormiumForm
+          data={data.FormiumForm}
+          onSubmit={async (values) => {
+            // Send form values to Formium
+            await formium.submitForm('your_form_slug', values)
+            alert('Success')
+          }}
+        />
+      }
+
+      <form
+        action="https://api.formium.io/submit/601afbc50bd76a000132f11c/contact"
+        method="POST"
+      >
+        <input type="email" name="email" id="email" />
+        <input type="name" name="name" id="name" />
+        <button type="submit">Send</button>
+      </form>
     </Layout>
   )
 }
+
+export const query = graphql`
+  {
+    formiumForm {
+      id
+      name
+    }
+  }
+`
