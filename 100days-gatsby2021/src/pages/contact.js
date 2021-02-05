@@ -18,16 +18,14 @@ export default function Contact({ data }) {
       >
         Check out the github ↩
       </a>
-      {
-        <FormiumForm
-          data={data.FormiumForm}
-          onSubmit={async (values) => {
-            // Send form values to Formium
-            await formium.submitForm('your_form_slug', values)
-            alert('Success')
-          }}
-        />
-      }
+      <FormiumForm
+        data={data.FormiumForm}
+        onSubmit={async (values) => {
+          // Send form values to Formium
+          // await formium.submitForm('your_form_slug', values)
+          alert('Success')
+        }}
+      />
 
       <form
         action="https://api.formium.io/submit/601afbc50bd76a000132f11c/contact"
@@ -35,7 +33,7 @@ export default function Contact({ data }) {
       >
         <input type="email" name="email" id="email" />
         <input type="name" name="name" id="name" />
-        <button type="submit">Send</button>
+        <button type="submit">Subscribe!</button>
       </form>
     </Layout>
   )
