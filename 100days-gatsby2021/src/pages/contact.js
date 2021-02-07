@@ -7,6 +7,12 @@ import { graphql } from 'gatsby'
 
 export default function Contact({ data }) {
   console.log(data)
+  const [success, setSuccess] = React.useState(false)
+
+  if (success) {
+    return <div>You are awsome! We will contact you shortly!</div>
+  }
+
   return (
     <Layout>
       <SEO title="Contact" />
@@ -19,11 +25,11 @@ export default function Contact({ data }) {
         Check out the github ↩
       </a>
       <FormiumForm
-        data={data.FormiumForm}
+        data={data.formiumForm}
         onSubmit={async (values) => {
           // Send form values to Formium
-          // await formium.submitForm('your_form_slug', values)
-          alert('Success')
+          await formium.submitForm('audiC0re', values)
+          setSuccess(true)
         }}
       />
 
@@ -33,7 +39,7 @@ export default function Contact({ data }) {
       >
         <input type="email" name="email" id="email" />
         <input type="name" name="name" id="name" />
-        <button type="submit">Subscribe!</button>
+        <button type="submit">send!</button>
       </form>
     </Layout>
   )
