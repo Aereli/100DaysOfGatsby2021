@@ -45,11 +45,11 @@ export default function Contact({ data }) {
   )
 }
 
-export const query = graphql`
-  {
-    formiumForm {
-      id
-      name
-    }
-  }
-`
+// export const query = graphql`
+//   {
+//     formiumForm {
+//       id
+//       name
+//     }
+//   }
+// `
