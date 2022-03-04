@@ -24,7 +24,7 @@ export default function Contact({ data }) {
       >
         Check out the github ↩
       </a>
-      <FormiumForm
+      {/* <FormiumForm
         data={data.formiumForm}
         onSubmit={async (values) => {
           // Send form values to Formium
@@ -40,7 +40,7 @@ export default function Contact({ data }) {
         <input type="email" name="email" id="email" />
         <input type="name" name="name" id="name" />
         <button type="submit">send!</button>
-      </form>
+      </form> */}
     </Layout>
   )
 }
