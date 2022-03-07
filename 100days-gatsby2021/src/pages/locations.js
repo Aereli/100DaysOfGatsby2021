@@ -2,9 +2,14 @@ import React from 'react'
 import Layout from '../components/layout'
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import SEO from '../components/SEO'
+import GetLatestData from '../functions/getLatestData'
+
 
 const Locations = () => {
-  const data = useStaticQuery(graphql`
+
+const results = GetLatestData()
+console.log('res from loca', results)  
+const data = useStaticQuery(graphql`
     query {
       locations: allSanityLocations {
         nodes {
@@ -19,8 +24,9 @@ const Locations = () => {
   return (
     <Layout>
       <SEO ttile="Locations" />
-      {cities.map((location) => (
-        <div key={location.key} styles={{ margin: `1rem` }}>
+      {results && results.map((location) => (
+        <div key={location._id} styles={{ margin: `1rem` }}>
+          {/* <Link to={`/location/${location.city}`}>{location.city}</Link> */}
           <Link to={`/location/${location.city}`}>{location.city}</Link>
         </div>
       ))}
