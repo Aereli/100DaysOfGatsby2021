@@ -3,16 +3,20 @@ import React from 'react'
 import Layout from '../components/layout'
 import Img from 'gatsby-image'
 import SEO from '../components/SEO'
+import getLatestData from '../functions/getLatestData'
 // import { Center } from '@chakra-ui/react'
 
 const IndexPage = ({ data }) => {
   const sanity = data.sanityHomePage
 
+  const result = getLatestData()
+  console.log('home', result)
+
   return (
     <Layout>
-      <SEO title="AudioC0re" />
-      <h1>Welcome to AudioCORE.</h1>
-      <p>
+      <SEO title="CMS fuN" />
+      <h1>Welcome TO CMS FUN</h1>
+      {/* <p>
         Currently on Challenge #2 of
         <a
           href="https://www.gatsbyjs.com/blog/challenge-2"
@@ -22,7 +26,7 @@ const IndexPage = ({ data }) => {
           {' '}
           #100DaysOfGatsby
         </a>
-      </p>
+      </p> */}
       <Img fluid={sanity.image.asset.fluid} alt={sanity.home} />
     </Layout>
   )
