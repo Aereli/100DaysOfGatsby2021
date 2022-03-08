@@ -10,7 +10,6 @@ const IndexPage = ({ data }) => {
   const sanity = data.sanityHomePage
 
   const result = getLatestData()
-  console.log('home', result)
 
   return (
     <Layout>
